@@ -41,6 +41,8 @@ public:
     const char *getCity() const {
         return city;
     }
+
+    friend class Game;
 };
 
 class Game { //composition of two teams
@@ -74,8 +76,8 @@ public:
     }
 
     bool rematch(Game & other) {
-        return strcmp(home.getName(), other.away.getName()) == 0
-               && strcmp(away.getName(), other.home.getName()) == 0;
+        return strcmp(home.name, other.away. name) == 0
+               && strcmp(away.name, other.home.name) == 0;
     }
 
     Team &getHome() {

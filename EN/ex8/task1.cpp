@@ -15,12 +15,7 @@ public:
         strcpy(this->name, name);
     }
 
-    friend ostream &operator<<(ostream &os, const Student &student) {
-        os << "Name: " << student.name << " Grade: " << student.grade;
-        return os;
-    }
-
-    bool operator<(const Student &rhs) const {
+        bool operator<(const Student &rhs) const {
         return grade < rhs.grade;
     }
 
@@ -53,12 +48,7 @@ public:
 //        cout << "Square constructor" << endl;
     }
 
-    friend ostream &operator<<(ostream &os, const Square &square) {
-        os << "a: " << square.a;
-        return os;
-    }
-
-    virtual int area () {
+        virtual int area () {
         return a*a;
     }
 

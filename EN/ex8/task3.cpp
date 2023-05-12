@@ -31,11 +31,7 @@ public:
         }
     }
 
-    friend ostream &operator<<(ostream &os, const DebitAccount &account) {
-        os << "Account Owner: " << account.owner << " Number: " << account.number << " Balance: " << account.balance;
-        return os;
-    }
-};
+    };
 
 class CreditAccount : public DebitAccount {
 private:
@@ -47,12 +43,7 @@ public:
                                                                               limit(limit) {
     }
 
-    friend ostream &operator<<(ostream &os, const CreditAccount &account) {
-        os << "Credit " << static_cast<const DebitAccount &>(account) << " limit: " << account.limit;
-        return os;
-    }
-
-    bool withdraw (int amount){
+        bool withdraw (int amount){
        if (DebitAccount::withdraw(amount)){
            return true;
        } else {

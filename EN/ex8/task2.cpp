@@ -15,11 +15,7 @@ public:
         strcpy(this->fullName, fullName);
     }
 
-    friend ostream &operator<<(ostream &os, const TennisPlayer &player) {
-        os << "Tennis Player with name: " << player.fullName << " Plays in league?: " << (player.playsInLeague ? "yes" : "no");
-        return os;
-    }
-};
+    };
 
 class RankedTennisPlayer : public TennisPlayer {
 private:
@@ -30,13 +26,7 @@ public:
         this->rank = rank;
     }
 
-    friend ostream &operator<<(ostream &os, const RankedTennisPlayer &player) {
-        os << "Ranked " << static_cast<const TennisPlayer &>(player) << " rank: " << player.rank;
-        return os;
-    }
-
-
-};
+    };
 
 int main () {
     RankedTennisPlayer rtp ("Novak Gjokovikj", true, 1);
